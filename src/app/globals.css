@@ -1,4 +1,10 @@
-
+/*
+#E1F0DA
+#D4E7C5
+#BFD8AF
+#99BC85
+*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 * {
     margin:0;
     padding:0;
@@ -16,20 +22,33 @@
 }
 
 .timer {
-    background-color: bisque;
-    width:60%;
+    background-color: #D4E7C5;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.buttonContainer {
+    display: flex;
+}
+button {
+    margin:0 5px;
+}
+.clock {
+    width: 45%;
+    height: 20%;
+    /*background-color: crimson;*/
+    /*border:1px saddlebrown solid;*/
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.clock {
-    width: 400px;
-    height: 400px;
-    /*background-color: crimson;*/
-    border-radius: 50%;
-    border:1px saddlebrown solid;
+.remainTime {
+    font-size: 74px;
+    color:#294B29;
+    font-family: 'DM Serif Display', serif;
 }
-
 
 .content {
     background-color: coral;
