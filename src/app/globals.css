@@ -1,33 +1,37 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+    margin:0;
+    padding:0;
+}
+.container {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    width:100vw;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.sideMenu {
+    background-color: cadetblue;
+    width:15%;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.timer {
+    background-color: bisque;
+    width:60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock {
+    width: 400px;
+    height: 400px;
+    /*background-color: crimson;*/
+    border-radius: 50%;
+    border:1px saddlebrown solid;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+.content {
+    background-color: coral;
+    width:25%;
 }
