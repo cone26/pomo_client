@@ -1,7 +1,8 @@
 'use client'
-export default function StartButton() {
+export default function StartButton(props) {
     function startHandler() {
-        console.log('start')
+        props.switchStatus();
+        console.log('start');
     }
 
     return (

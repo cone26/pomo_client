@@ -1,10 +1,10 @@
 'use client'
-export default function ProcessButton() {
+export default function ProcessButton(props) {
     function pauseHandler() {
         console.log('pause')
     }
     function giveUpHandler() {
-        console.log('give up')
+        props.switchStatus();
     }
 
     return (
