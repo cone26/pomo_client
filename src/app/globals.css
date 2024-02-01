@@ -28,22 +28,27 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
 }
 .buttonContainer {
     display: flex;
 }
+
 button {
     margin:0 5px;
 }
+
 .clock {
     width: 45%;
     height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 .remainTime {
-    font-size: 74px;
+    cursor: default;
+    font-size: 80px;
     color:#294B29;
     font-family: 'DM Serif Display', serif;
 }
@@ -52,3 +57,46 @@ button {
     background-color: coral;
     width:25%;
 }
+
+button {
+    border: 0;
+    background-color: #9DBC98;
+    font-size: 24px;
+    color: #FBFADA;
+    font-family: 'DM Serif Display', serif;
+    padding: 5px 15px;
+    border-radius: 5px;
+    box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #43766C;
+}                                             /* CSS */
+                                                   .button-67 {
+                                                       align-items: center;
+                                                       background: #f5f5fa;
+                                                       border: 0;
+                                                       border-radius: 8px;
+                                                       box-shadow: -10px -10px 30px 0 #fff,10px 10px 30px 0 #1d0dca17;
+                                                       box-sizing: border-box;
+                                                       color: #2a1f62;
+                                                       cursor: pointer;
+                                                       display: flex;
+                                                       font-family: "Cascadia Code",Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
+                                                       font-size: 1rem;
+                                                       justify-content: center;
+                                                       line-height: 1.5rem;
+                                                       padding: 15px;
+                                                       position: relative;
+                                                       text-align: left;
+                                                       transition: .2s;
+                                                       user-select: none;
+                                                       -webkit-user-select: none;
+                                                       touch-action: manipulation;
+                                                       white-space: pre;
+                                                       width: max-content;
+                                                       word-break: normal;
+                                                       word-spacing: normal;
+                                                   }
+
