@@ -2,20 +2,37 @@
 import FilterStatus from "@/Component/FilterStatus";
 import {useState} from "react";
 export default function Home() {
+    const TIME_SET = 15;
     const [status, setStatus] = useState(true)
     const switchStatus = () => {
         setStatus(!status)
     };
-    const [time, setTime] = useState(15*60);
+
+    const [time, setTime] = useState(TIME_SET*60);
     const [minute, setMinute] = useState(Math.floor(time / 60));
     const [second, setSecond] = useState(time % 60);
+    const resetTimer = () => {
+        setTime(TIME_SET*60)
+        console.log(time)
+        setMinute(Math.floor(time / 60))
+        setSecond(time % 60)
+    }
+    const calculateTime = () => {
+        setTime(time-1);
+        setMinute(Math.floor(time / 60))
+        setSecond(time % 60)
+    }
+    const [currentTime, setCurrentTime] = useState(0);
+    const currentTimeIs = () => {
+        setCurrentTime(new Date().getTime())
+    }
+
     // 여기 수정
     if(!status){
-        setTimeout(()=>{
-            setTime(time-1);
-            setMinute(Math.floor(time / 60))
-            setSecond(time % 60)
+        setInterval(()=> {
+            calculateTime()
         },1000)
+
     }
 
 
@@ -29,7 +46,7 @@ export default function Home() {
                   </span>
               </div>
               <div className={'buttonContainer'}>
-                  <FilterStatus status={status} switchStatus={switchStatus}/>
+                  <FilterStatus status={status} switchStatus={switchStatus} resetTimer={resetTimer} calculateTime={calculateTime}/>
               </div>
             </div>
         {/*<div className={'content'}>menu screen or todo</div>*/}
