@@ -9,7 +9,7 @@ export default function FilterStatus(props) {
         )
     } else {
         return (
-            <ProcessButton status={props.status} switchStatus={props.switchStatus} resetTimer={props.resetTimer} calculateTime={props.calculateTime} />
+            <ProcessButton status={props.status} switchStatus={props.switchStatus} resetTimer={props.resetTimer} calculateTime={props.calculateTime} resetTime={props.resetTime} />
         )
     }
 

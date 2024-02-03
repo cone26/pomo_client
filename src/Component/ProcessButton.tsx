@@ -1,14 +1,11 @@
 'use client'
 export default function ProcessButton(props) {
     function pauseHandler() {
-        // props.calculateTime()
         props.switchStatus();
     }
     function giveUpHandler() {
-        // props.currentTimeIs()
-
         props.switchStatus();
-        // props.resetTimer();
+        props.resetTime();
     }
 
     return (
