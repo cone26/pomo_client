@@ -9,12 +9,9 @@ export default function Home() {
     };
     const [time, setTime] = useState('00:00');
     const [initTime, setInitTime] = useState(DEFAULT_TIME * 60 * 1000);
-    const [reset, setReset] = useState(false)
     const resetTime = () => {
         setReset(true)
     }
-    const [resetTimer, setResetTimer] = useState(0);
-
 
     if(!status){
         setTimeout(()=>{
