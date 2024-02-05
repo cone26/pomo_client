@@ -5,7 +5,7 @@ export default function ProcessButton(props) {
     }
     function giveUpHandler() {
         props.switchStatus();
-        props.resetTime();
+        props.clearTime();
     }
 
     return (
