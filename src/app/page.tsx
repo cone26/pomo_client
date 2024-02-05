@@ -1,14 +1,26 @@
 'use client'
 import FilterStatus from "@/Component/FilterStatus";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 export default function Home() {
+    // states
     const DEFAULT_TIME = 15
     const [status, setStatus] = useState(true)
+    const [time, setTime] = useState(0);
+    const [minute, setMinute] = useState("");
+    const [second, setSecond] = useState("");
+    const [initTime, setInitTime] = useState(DEFAULT_TIME * 60 * 1000);
+
+    // refs
+    const startTimeRef = useRef(0);
+    const leftTimeRef = useRef(0);
+
+    useEffect(()=> {
+
+    })
     const switchStatus = () => {
         setStatus(!status)
     };
-    const [time, setTime] = useState('00:00');
-    const [initTime, setInitTime] = useState(DEFAULT_TIME * 60 * 1000);
+
     const resetTime = () => {
         setReset(true)
     }
