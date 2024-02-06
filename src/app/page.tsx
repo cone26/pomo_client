@@ -50,7 +50,7 @@ export default function Home() {
     }
 
     const clearTime = () => {
-        setTime(0)
+        count.current = time;
     }
 
 
