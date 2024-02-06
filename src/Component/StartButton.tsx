@@ -1,5 +1,5 @@
 'use client'
-export default function StartButton(props) {
+export default function StartButton(props:any) {
     function startHandler() {
         props.switchStatus();
         // props.calculateTime();

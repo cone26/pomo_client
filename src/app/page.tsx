@@ -1,41 +1,43 @@
 'use client'
 import FilterStatus from "@/Component/FilterStatus";
-import {useEffect, useRef, useState} from "react";
+import {MutableRefObject, useEffect, useRef, useState} from "react";
 import {clearInterval} from "timers";
+import {loadGetInitialProps} from "next/dist/shared/lib/utils";
 export default function Home() {
     // states
     const DEFAULT_TIME = 15
     const [status, setStatus] = useState(true)
-    const [time, setTime] = useState(DEFAULT_TIME* 60 * 1000);
+    const [time, setTime] = useState(DEFAULT_TIME* 60);
     const [minute, setMinute] = useState("");
     const [second, setSecond] = useState("");
-    const [count, setCound] = useState(0);
 
     // refs
-    const intervalRef = useRef(null);
-    const leftTimeRef = useRef(0);
+    const count = useRef(time);
+    const interval = useRef<ReturnType<typeof setInterval> | null>(null)
 
-    useEffect(()=> {
-        minuteCalculator();
-        if(time <= 0) {
-            setStatus(true)
-            setTime(0)
-        }
-    },[time])
+
 
     useEffect(()=>{
-        let interval: NodeJS.Timer;
         if(!status) {
-            interval =
-                setInterval(() => {
-                    setTime(time=>time+1)
-                }, 1000)
+            interval.current = setInterval(()=>{
+                count.current -= 1;
+                minuteCalculator()
+            },1000)
+            // @ts-ignore
+            return () => clearInterval(interval.current);
         }
-        else if (status && time === 0) {
-            clearInterval(interval!)
-        }
-        return () => clearInterval(interval);
     },[status])
+
+
+    useEffect(()=> {
+        // console.log('cal')
+        minuteCalculator();
+        if(count.current <= 0) {
+            setStatus(true)
+            // @ts-ignore
+            clearInterval(interval.current);
+        }
+    },[count.current])
 
     const switchStatus = () => {
         setStatus(!status)
@@ -43,29 +45,18 @@ export default function Home() {
 
     // function
     const minuteCalculator = () => {
+
         // convert time
-        const toSecond = Math.floor(time / 1000)
-        setMinute((Math.floor(toSecond / 60)).toString())
-        setSecond((Math.floor(toSecond % 60)).toString())
+        // const toSecond = Math.floor(count.current / 1000)
+        setMinute((Math.floor(count.current / 60)).toString())
+        setSecond((Math.floor(count.current % 60)).toString())
     }
 
     const clearTime = () => {
         setTime(0)
     }
-    const countDown = () => {
-        setCound((count) => count -1)
-    }
 
-    const start = () => {
-        if(!status) {
 
-        }
-    }
-    // if(!status){
-    //     setTimeout(()=>{
-    //         setTime(time - 1)
-    //     },1000)
-    // }
 
     return (
         <div className={'container'}>
