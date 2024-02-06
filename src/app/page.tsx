@@ -4,10 +4,10 @@ import { useEffect, useRef, useState} from "react";
 
 export default function Home() {
     // states
-    const DEFAULT_TIME = 1
+    const DEFAULT_TIME = 0.5
     const [status, setStatus] = useState(true)
     const [time, setTime] = useState(DEFAULT_TIME* 60);
-    const [breakTime, setBreakTime] = useState(3 * 60);
+    const [breakTime, setBreakTime] = useState(0.3 * 60);
     // const [round, setRound] = useState(0);
     const [minute, setMinute] = useState("");
     const [second, setSecond] = useState("");
@@ -16,7 +16,7 @@ export default function Home() {
     // refs
     const timeCount = useRef(time);
     const breakCount = useRef(breakTime)
-    const count = isBreak ? breakCount : timeCount;
+    let count = isBreak ? breakCount : timeCount;
     const interval = useRef<ReturnType<typeof setInterval> | null>(null)
 
     useEffect(()=>{
@@ -34,10 +34,11 @@ export default function Home() {
     useEffect(()=> {
         minuteCalculator();
         if(count.current <= 0) {
-            setStatus(true)
-            setIsBreak(true)
+            setStatus(!status)
+            setIsBreak(!isBreak)
             // @ts-ignore
             clearInterval(interval.current);
+            count.current = isBreak ? breakTime : time;
         }
     },[count.current])
 
@@ -52,7 +53,7 @@ export default function Home() {
     }
 
     const clearTime = () => {
-        count.current = time;
+        count.current = isBreak ? breakTime : time;
         // setRound((round)=>round+1)
     }
 
