@@ -5,6 +5,9 @@ import { useEffect, useRef, useState} from "react";
 export default function Home() {
     // states
     const DEFAULT_TIME = 0.5
+    const M_FOCUS_TIME = "It's time to focus !";
+    const M_BREAK_TIME = "Let's have a break.";
+
     const [status, setStatus] = useState(true)
     const [time, setTime] = useState(DEFAULT_TIME* 60);
     const [breakTime, setBreakTime] = useState(0.3 * 60);
@@ -12,6 +15,7 @@ export default function Home() {
     const [minute, setMinute] = useState("");
     const [second, setSecond] = useState("");
     const [isBreak, setIsBreak] = useState(false);
+    const [message, setMessage] = useState("");
 
     // refs
     const timeCount = useRef(time);
@@ -32,6 +36,7 @@ export default function Home() {
 
 
     useEffect(()=> {
+        setMessage(isBreak ? M_BREAK_TIME : M_FOCUS_TIME)
         minuteCalculator();
         if(count.current <= 0) {
             setStatus(!status)
@@ -39,6 +44,7 @@ export default function Home() {
             // @ts-ignore
             clearInterval(interval.current);
             count.current = isBreak ? breakTime : time;
+
         }
     },[count.current])
 
@@ -62,6 +68,7 @@ export default function Home() {
     return (
         <div className={'container'}>
             {/*<div className={'sideMenu'}>side</div>*/}
+            <h1>{message}</h1>
             <div className={'timer'}>
                 <div className={'clock'}>
                     <span className={'remainTime'}>

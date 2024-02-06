@@ -17,7 +17,11 @@
     flex-direction: column;
     background-color: #D4E7C5;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+}
+h1{
+    color: #789461;
+    margin-bottom: 20px;
 }
 
 .sideMenu {
