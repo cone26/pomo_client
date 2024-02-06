@@ -1,26 +1,30 @@
 'use client'
 import FilterStatus from "@/Component/FilterStatus";
 import { useEffect, useRef, useState} from "react";
+
 export default function Home() {
     // states
-    const DEFAULT_TIME = 15
+    const DEFAULT_TIME = 1
     const [status, setStatus] = useState(true)
     const [time, setTime] = useState(DEFAULT_TIME* 60);
+    const [breakTime, setBreakTime] = useState(3 * 60);
+    // const [round, setRound] = useState(0);
     const [minute, setMinute] = useState("");
     const [second, setSecond] = useState("");
+    const [isBreak, setIsBreak] = useState(false);
 
     // refs
-    const count = useRef(time);
+    const timeCount = useRef(time);
+    const breakCount = useRef(breakTime)
+    const count = isBreak ? breakCount : timeCount;
     const interval = useRef<ReturnType<typeof setInterval> | null>(null)
-
-
 
     useEffect(()=>{
         if(!status) {
             interval.current = setInterval(()=>{
                 count.current -= 1;
-                minuteCalculator()
-            },1000)
+                minuteCalculator();
+            },1000);
             // @ts-ignore
             return () => clearInterval(interval.current);
         }
@@ -31,6 +35,7 @@ export default function Home() {
         minuteCalculator();
         if(count.current <= 0) {
             setStatus(true)
+            setIsBreak(true)
             // @ts-ignore
             clearInterval(interval.current);
         }
@@ -42,15 +47,13 @@ export default function Home() {
 
     // function
     const minuteCalculator = () => {
-
-        // convert time
-        // const toSecond = Math.floor(count.current / 1000)
         setMinute((Math.floor(count.current / 60)).toString())
         setSecond((Math.floor(count.current % 60)).toString())
     }
 
     const clearTime = () => {
         count.current = time;
+        // setRound((round)=>round+1)
     }
 
 
@@ -68,6 +71,9 @@ export default function Home() {
                     <FilterStatus status={status} switchStatus={switchStatus} clearTime={clearTime} />
                 </div>
             </div>
+            {/*<div className={'round'}>*/}
+            {/*    <span className={'successDot'}></span>*/}
+            {/*</div>*/}
             {/*<div className={'content'}>menu screen or todo</div>*/}
         </div>
     );
