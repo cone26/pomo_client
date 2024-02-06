@@ -1,8 +1,6 @@
 'use client'
 import FilterStatus from "@/Component/FilterStatus";
-import {MutableRefObject, useEffect, useRef, useState} from "react";
-import {clearInterval} from "timers";
-import {loadGetInitialProps} from "next/dist/shared/lib/utils";
+import { useEffect, useRef, useState} from "react";
 export default function Home() {
     // states
     const DEFAULT_TIME = 15
@@ -30,7 +28,6 @@ export default function Home() {
 
 
     useEffect(()=> {
-        // console.log('cal')
         minuteCalculator();
         if(count.current <= 0) {
             setStatus(true)
