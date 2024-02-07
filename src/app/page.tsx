@@ -60,6 +60,7 @@ export default function Home() {
 
     const clearTime = () => {
         count.current = isBreak ? breakTime : time;
+        setIsBreak(false)
         // setRound((round)=>round+1)
     }
 
@@ -68,7 +69,7 @@ export default function Home() {
     return (
         <div className={'container'}>
             {/*<div className={'sideMenu'}>side</div>*/}
-            <h1>{message}</h1>
+            <h1 className={'message'}>{message}</h1>
             <div className={'timer'}>
                 <div className={'clock'}>
                     <span className={'remainTime'}>
