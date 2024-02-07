@@ -1,23 +1,27 @@
 'use client'
 
-import {signIn, signOut} from "next-auth/react";
+import {signIn, signOut, useSession} from "next-auth/react";
 
 function SignInButton() {
-    return (
-        <div className='space-x-10'>
+    const { data: session } = useSession();
+
+    if(session && session.user) {
+        return (
             <button
-                className='rounded-xl border bg-yellow-300 px-12 py-4'
-                onClick={() => signIn()}
-            >
-                LogIn
-            </button>
-            <button
-                className='rounded-xl border bg-red-300 px-12 py-4'
+                className="px-12 py-4 border rounded-xl bg-red-300"
                 onClick={() => signOut()}
             >
-                Log Out
+                {session.user.name}님 Log Out
             </button>
-        </div>
+        )
+    }
+    return (
+        <button
+            className="px-12 py-4 border rounded-xl bg-yellow-300"
+            onClick={() => signIn()}
+        >
+            LogIn
+        </button>
     )
 }
 
