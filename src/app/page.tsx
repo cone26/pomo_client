@@ -1,6 +1,7 @@
 'use client'
 import FilterStatus from "@/Component/FilterStatus";
 import { useEffect, useRef, useState} from "react";
+import SignInButton from "@/Component/SignInButton";
 
 export default function Home() {
     // states
@@ -84,6 +85,7 @@ export default function Home() {
             {/*    <span className={'successDot'}></span>*/}
             {/*</div>*/}
             {/*<div className={'content'}>menu screen or todo</div>*/}
+            <SignInButton/>
         </div>
     );
 }
