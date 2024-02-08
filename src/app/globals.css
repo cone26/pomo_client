@@ -91,7 +91,8 @@ button:hover {
     background: #43766C;
 }
 
-.login {
+.login,
+.logout {
     position: absolute;
     top:20px;
     right:40px;
