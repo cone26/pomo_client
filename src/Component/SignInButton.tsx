@@ -4,7 +4,9 @@ import {signIn, signOut, useSession} from "next-auth/react";
 
 function SignInButton() {
     const { data: session } = useSession();
-
+    const handleSubmit = () => {
+        alert(`This feature is not ready yet.`);
+    }
     if(session && session.user) {
         return (
             <button
@@ -18,7 +20,10 @@ function SignInButton() {
     return (
         <button
             className="px-12 py-4 border rounded-xl bg-yellow-300 login"
-            onClick={() => signIn()}
+            onClick={
+            handleSubmit
+            // () => signIn()
+        }
         >
             LogIn
         </button>
