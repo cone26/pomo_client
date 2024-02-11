@@ -10,8 +10,8 @@ export default function ProcessButton(props) {
 
     return (
         <>
-            <button className={'giveUp'} onClick={giveUpHandler}>Give Up</button>
-            <button className={'pause'} onClick={pauseHandler}>Pause</button>
+            <button className={'giveUp watchBtn'} onClick={giveUpHandler}>Give Up</button>
+            <button className={'pause watchBtn'} onClick={pauseHandler}>Pause</button>
         </>
     )
 }

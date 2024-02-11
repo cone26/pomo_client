@@ -8,7 +8,7 @@ export default function StartButton(props:any) {
 
     return (
         <>
-            <button className={'start'} onClick={startHandler}>Start</button>
+            <button className={'start watchBtn'} onClick={startHandler}>Start</button>
         </>
     )
 }

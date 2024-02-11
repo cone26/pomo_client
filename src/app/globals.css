@@ -90,7 +90,7 @@ button {
     border-radius: 50%;
     background-color: #43766C;
 }
-button:hover {
+.watchBtn:hover {
     background: #43766C;
 }
 
@@ -98,5 +98,13 @@ button:hover {
 .logout {
     position: absolute;
     top:20px;
-    right:40px;
+    right:30px;
+    font-size: 20px;
+    background-color: inherit;
+    box-shadow: none;
+    color: #4F6F52;
+}
+.login:hover,
+.logout:hover {
+    color: #9DBC98;
 }
