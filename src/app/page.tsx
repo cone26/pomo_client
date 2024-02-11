@@ -5,13 +5,14 @@ import SignInButton from "@/Component/SignInButton";
 
 export default function Home() {
     // states
-    const DEFAULT_TIME = 0.5
+    const DEFAULT_TIME = 15
+    const DEFAULT_BREAK = 5
     const M_FOCUS_TIME = "It's time to focus !";
     const M_BREAK_TIME = "Let's have a break.";
 
     const [status, setStatus] = useState(true)
     const [time, setTime] = useState(DEFAULT_TIME* 60);
-    const [breakTime, setBreakTime] = useState(0.3 * 60);
+    const [breakTime, setBreakTime] = useState(DEFAULT_BREAK * 60);
     // const [round, setRound] = useState(0);
     const [minute, setMinute] = useState("");
     const [second, setSecond] = useState("");
