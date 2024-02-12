@@ -10,7 +10,7 @@ function SignInButton() {
     if(session && session.user) {
         return (
             <button
-                className="px-12 py-4 border rounded-xl bg-red-300 logout"
+                className="logout"
                 onClick={() => signOut()}
             >
                 {session.user.name}님 Log Out
@@ -19,7 +19,7 @@ function SignInButton() {
     }
     return (
         <button
-            className="px-12 py-4 border rounded-xl bg-yellow-300 login"
+            className="login"
             onClick={
             handleSubmit
             // () => signIn()
