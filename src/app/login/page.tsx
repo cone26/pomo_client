@@ -1,15 +1,19 @@
 'use client'
 import React, { useRef } from 'react'
 import { signIn } from 'next-auth/react'
+import {redirect} from "next/navigation";
 
 function Login() {
     const emailRef = useRef(null)
     const passwordRef = useRef(null)
 
     const handleSubmit = async () => {
-
-        console.log(emailRef.current)
-        console.log(passwordRef.current)
+      const result = await signIn("credentials", {
+          email: emailRef.current,
+          password: passwordRef.current,
+          redirect: true,
+          callbackUrl: '/',
+      })
     }
     return (
         <main className='container'>
