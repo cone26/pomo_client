@@ -2,18 +2,20 @@
 import FilterStatus from "@/Component/FilterStatus";
 import { useEffect, useRef, useState} from "react";
 import SignInButton from "@/Component/SignInButton";
+import {useSession} from "next-auth/react";
 
 export default function Home() {
+    const { data: session } = useSession();
     // states
-    const DEFAULT_TIME = 15
-    const DEFAULT_BREAK = 5
+    const DEFAULT_TIME = 0.5
+    const DEFAULT_BREAK = 0.5
     const M_FOCUS_TIME = "It's time to focus !";
     const M_BREAK_TIME = "Let's have a break.";
 
     const [status, setStatus] = useState(true)
     const [time, setTime] = useState(DEFAULT_TIME* 60);
     const [breakTime, setBreakTime] = useState(DEFAULT_BREAK * 60);
-    // const [round, setRound] = useState(0);
+    const [round, setRound] = useState(0);
     const [minute, setMinute] = useState("");
     const [second, setSecond] = useState("");
     const [isBreak, setIsBreak] = useState(false);
@@ -34,6 +36,7 @@ export default function Home() {
             // @ts-ignore
             return () => clearInterval(interval.current);
         }
+
     },[status])
 
 
@@ -45,10 +48,14 @@ export default function Home() {
             setIsBreak(!isBreak)
             // @ts-ignore
             clearInterval(interval.current);
+            if(isBreak) {
+                setRound(round + 1)
+            }
             count.current = isBreak ? breakTime : time;
 
         }
     },[count.current])
+
 
     const switchStatus = () => {
         setStatus(!status)
@@ -82,6 +89,7 @@ export default function Home() {
                     <FilterStatus status={status} switchStatus={switchStatus} clearTime={clearTime} />
                 </div>
             </div>
+            <span>{round}</span>
             {/*<div className={'round'}>*/}
             {/*    <span className={'successDot'}></span>*/}
             {/*</div>*/}
