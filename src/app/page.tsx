@@ -28,6 +28,9 @@ export default function Home() {
     const interval = useRef<ReturnType<typeof setInterval> | null>(null)
 
     useEffect(()=>{
+        if(session && session.user) void getRound()
+    })
+    useEffect(()=>{
         if(!status) {
             interval.current = setInterval(()=>{
                 count.current -= 1;
@@ -49,6 +52,7 @@ export default function Home() {
             // @ts-ignore
             clearInterval(interval.current);
             if(isBreak) {
+
                 setRound(round + 1)
             }
             count.current = isBreak ? breakTime : time;
@@ -60,6 +64,23 @@ export default function Home() {
     const switchStatus = () => {
         setStatus(!status)
     };
+
+    const getRound = async () => {
+        console.log('test')
+        // const res = await fetch(`http://localhost:3002/round/day`, {
+        //     method: "GET",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        // });
+        const { data } = await this.axios({
+            method: 'GET',
+            url: `/round/day`,
+        });
+        // const userRound = await res.json()
+        if(!data) setRound(0)
+        else setRound(data)
+    }
 
     // function
     const minuteCalculator = () => {
