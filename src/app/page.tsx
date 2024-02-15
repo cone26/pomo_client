@@ -3,6 +3,7 @@ import FilterStatus from "@/Component/FilterStatus";
 import { useEffect, useRef, useState} from "react";
 import SignInButton from "@/Component/SignInButton";
 import {useSession} from "next-auth/react";
+import {getToken} from "@/utils/localStorage/token";
 
 export default function Home() {
     const { data: session } = useSession();
@@ -70,8 +71,8 @@ export default function Home() {
         const res = await fetch(`http://localhost:3002/round/day`, {
             method: "GET",
             headers: {
-                "Content-Type": "application/json",
-                // "Authorization": `Basic ${btoa(`${params.address}: `)}`,
+                // "Content-Type": "application/json",
+                Authorization: `Basic ${getToken().accessToken}`,
             },
         });
         // const { data } = await this.axios({

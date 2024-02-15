@@ -1,3 +1,5 @@
+import {setToken} from "@/utils/localStorage/token";
+
 interface RequestBody {
     email: string;
     password: string;
@@ -16,6 +18,9 @@ export async function POST(request: Request) {
             password: body?.password,
         }),
     });
-
+    const user = await res.json()
+    setToken({
+        accessToken: user.data.accessToken
+    })
     return new Response(JSON.stringify(res))
 }

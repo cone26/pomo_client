@@ -2,6 +2,7 @@
 import React, { useRef } from 'react'
 import { signIn } from 'next-auth/react'
 import {redirect} from "next/navigation";
+import {setToken} from "@/utils/localStorage/token";
 
 function Login() {
     const emailRef = useRef(null)
