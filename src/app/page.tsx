@@ -4,6 +4,7 @@ import { useEffect, useRef, useState} from "react";
 import SignInButton from "@/Component/SignInButton";
 import {useSession} from "next-auth/react";
 import {getToken} from "@/utils/localStorage/token";
+import {CONFIG} from "../../config";
 
 export default function Home() {
     const { data: session } = useSession();
@@ -68,13 +69,16 @@ export default function Home() {
 
     const getRound = async (session:any) => {
         const accessToken = session.user.data.accessToken
-        const res = await fetch(`http://localhost:3002/round/day`, {
+        const res = await fetch(`${CONFIG.SERVER}/round/day`, {
             method: "GET",
             headers: {
                 // "Content-Type": "application/json",
-                Authorization: `Basic ${getToken().accessToken}`,
+                // TODO: localstorage 사용 수정
+                // Authorization: `Bearer ${getToken().accessToken}`,
+                Authorization: `Bearer ${accessToken}`,
             },
         });
+        console.log(await res.json())
         // const { data } = await this.axios({
         //     method: 'GET',
         //     url: `/round/day`,
