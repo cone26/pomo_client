@@ -9,5 +9,5 @@ export const CONFIG = {
     DOMAIN: process.env.NEXT_PUBLIC_API_DOMAIN,
     API_BASE_URL: process.env.NEXTPUBLIC_API_BASE_URL,
     AUTH_TOKEN_KEY: process.env.NEXT_PUBLIC_AUTH_TOKEN_KEY,
-
+    SERVER: process.env.NEXT_PUBLIC_SERVER_API_URL,
 }

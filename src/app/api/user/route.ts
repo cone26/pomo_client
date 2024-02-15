@@ -1,4 +1,5 @@
 import {setToken} from "@/utils/localStorage/token";
+import {CONFIG} from "../../../../config";
 
 interface RequestBody {
     email: string;
@@ -8,7 +9,7 @@ interface RequestBody {
 export async function POST(request: Request) {
     const body: RequestBody = await request.json()
 
-    const res = await fetch(`${process.env.SERVER_API_URL}/auth/login`, {
+    const res = await fetch(`${CONFIG.SERVER}/auth/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

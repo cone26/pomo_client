@@ -9,6 +9,7 @@ function Login() {
     const passwordRef = useRef(null)
 
     const handleSubmit = async () => {
+        console.log(emailRef.current)
       const result = await signIn("credentials", {
           email: emailRef.current,
           password: passwordRef.current,
