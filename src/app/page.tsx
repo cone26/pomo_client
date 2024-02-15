@@ -28,7 +28,7 @@ export default function Home() {
     const interval = useRef<ReturnType<typeof setInterval> | null>(null)
 
     useEffect(()=>{
-        if(session && session.user) void getRound()
+        if(session && session.user) void getRound(session)
     })
     useEffect(()=>{
         if(!status) {
@@ -65,21 +65,23 @@ export default function Home() {
         setStatus(!status)
     };
 
-    const getRound = async () => {
-        console.log('test')
-        // const res = await fetch(`http://localhost:3002/round/day`, {
-        //     method: "GET",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //     },
-        // });
-        const { data } = await this.axios({
-            method: 'GET',
-            url: `/round/day`,
+    const getRound = async (session:any) => {
+        const accessToken = session.user.data.accessToken
+        const res = await fetch(`http://localhost:3002/round/day`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                // "Authorization": `Basic ${btoa(`${params.address}: `)}`,
+            },
         });
+        // const { data } = await this.axios({
+        //     method: 'GET',
+        //     url: `/round/day`,
+        // });
+        // Authorization: `Basic ${btoa(`${params.address}: `)}`,
         // const userRound = await res.json()
-        if(!data) setRound(0)
-        else setRound(data)
+        // if(!data) setRound(0)
+        // else setRound(data)
     }
 
     // function
