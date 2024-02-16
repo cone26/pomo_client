@@ -78,15 +78,9 @@ export default function Home() {
                 Authorization: `Bearer ${accessToken}`,
             },
         });
-        console.log(await res.json())
-        // const { data } = await this.axios({
-        //     method: 'GET',
-        //     url: `/round/day`,
-        // });
-        // Authorization: `Basic ${btoa(`${params.address}: `)}`,
-        // const userRound = await res.json()
-        // if(!data) setRound(0)
-        // else setRound(data)
+        const data = await res.json()
+        if(!data.data) setRound(0)
+        else setRound(data.data)
     }
 
     // function
