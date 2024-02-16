@@ -54,8 +54,9 @@ export default function Home() {
             // @ts-ignore
             clearInterval(interval.current);
             if(isBreak) {
-
                 setRound(round + 1)
+                if(session && session.user) void updateRound(session)
+
             }
             count.current = isBreak ? breakTime : time;
 
@@ -80,7 +81,20 @@ export default function Home() {
         });
         const data = await res.json()
         if(!data.data) setRound(0)
-        else setRound(data.data)
+        else setRound(data.data.round)
+    }
+
+    const updateRound = async (session:any) => {
+        const accessToken = session.user.data.accessToken;
+        const res = await fetch(`${CONFIG.SERVER}/round/set`, {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            },
+            body: JSON.stringify({
+                round: Number(round)
+            })
+        });
     }
 
     // function
