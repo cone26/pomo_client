@@ -15,7 +15,6 @@ function Login() {
           redirect: true,
           callbackUrl: '/',
       })
-        console.log(result)
     }
     return (
         <main className='container'>
