@@ -121,11 +121,12 @@ export default function Home() {
                         {`${minute.padStart(2,'0')}:${second.padStart(2,'0')}`}
                     </span>
                 </div>
+                <span className={'round'}>{`Succeeded ${round} round`}</span>
                 <div className={'buttonContainer'}>
                     <FilterStatus status={status} switchStatus={switchStatus} clearTime={clearTime} />
                 </div>
             </div>
-            <span>{round}</span>
+
             {/*<div className={'round'}>*/}
             {/*    <span className={'successDot'}></span>*/}
             {/*</div>*/}

@@ -108,3 +108,9 @@ button {
 .logout:hover {
     color: #9DBC98;
 }
+
+.round {
+    font-size: 22px;
+    color: #4F6F52;
+
+}
