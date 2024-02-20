@@ -42,7 +42,10 @@
 }
 
 .buttonContainer {
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 button {
@@ -55,7 +58,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 .remainTime {
     cursor: default;
@@ -112,5 +115,5 @@ button {
 .round {
     font-size: 22px;
     color: #4F6F52;
-
+    margin-bottom: 35px;
 }
