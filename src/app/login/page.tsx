@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import { signIn } from 'next-auth/react'
 import {redirect} from "next/navigation";
 import {setToken} from "@/utils/localStorage/token";
+import Link from "next/link";
 
 function Login() {
     const emailRef = useRef(null)
@@ -50,6 +51,10 @@ function Login() {
                         Log In
                     </button>
                 </div>
+                    <div className={'signup'}>
+                        <span>{`Don't have an account?`}</span>
+                        <Link href={`/signup`}></Link>
+                    </div>
                 </div>
             </div>
         </main>
