@@ -20,7 +20,7 @@ function Login() {
     return (
         <main className='container'>
             <div className={'loginContainer'}>
-                <h1>Login</h1>
+                <h1>LOGIN</h1>
                 <div className={'loginForm'}>
                     <div className={'loginInput'}>
                         <input
@@ -53,7 +53,7 @@ function Login() {
                 </div>
                     <div className={'signup'}>
                         <span>{`Don't have an account?`}</span>
-                        <Link href={`/signup`}></Link>
+                        <Link href={`/signup`}>SignUp</Link>
                     </div>
                 </div>
             </div>
