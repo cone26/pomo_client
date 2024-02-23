@@ -9,7 +9,6 @@ import dingSound from '../../public/ding.wav'
 
 export default function Home() {
     const { data: session } = useSession();
-    const ding = new Audio(dingSound);
     // states
     const DEFAULT_TIME = 0.5
     const DEFAULT_BREAK = 0.5
@@ -24,7 +23,7 @@ export default function Home() {
     const [second, setSecond] = useState("");
     const [isBreak, setIsBreak] = useState(false);
     const [message, setMessage] = useState("");
-
+    const [sound, setSound] = useState<HTMLAudioElement>();
     // refs
     const timeCount = useRef(time);
     const breakCount = useRef(breakTime)
@@ -34,6 +33,9 @@ export default function Home() {
     useEffect(()=>{
         if(session && session.user) void getRound(session)
     })
+    useEffect(()=>{
+        setSound(new Audio(dingSound))
+    },[])
     useEffect(()=>{
         if(!status) {
             interval.current = setInterval(()=>{
@@ -51,7 +53,7 @@ export default function Home() {
         setMessage(isBreak ? M_BREAK_TIME : M_FOCUS_TIME)
         minuteCalculator();
         if(count.current <= 0) {
-            ding.play();
+            sound.play();
             setStatus(!status)
             setIsBreak(!isBreak)
             // @ts-ignore
