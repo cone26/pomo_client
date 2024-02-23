@@ -53,7 +53,7 @@ export default function Home() {
         setMessage(isBreak ? M_BREAK_TIME : M_FOCUS_TIME)
         minuteCalculator();
         if(count.current <= 0) {
-            sound.play();
+            sound && sound.play();
             setStatus(!status)
             setIsBreak(!isBreak)
             // @ts-ignore
