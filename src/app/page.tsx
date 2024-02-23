@@ -10,8 +10,8 @@ import dingSound from '../../public/ding.wav'
 export default function Home() {
     const { data: session } = useSession();
     // states
-    const DEFAULT_TIME = 0.5
-    const DEFAULT_BREAK = 0.5
+    const DEFAULT_TIME = 15
+    const DEFAULT_BREAK = 5
     const M_FOCUS_TIME = "It's time to focus !";
     const M_BREAK_TIME = "Let's have a break.";
 
