@@ -40,3 +40,12 @@ h1 {
 h1 {
     font-family: 'DM Serif Display', serif;
 }
+
+a {
+    color:#4F6F52;
+}
+
+.signup {
+    margin-top: 10px;
+    opacity: 0.6;
+}

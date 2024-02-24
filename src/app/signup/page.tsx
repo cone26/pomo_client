@@ -8,6 +8,7 @@ import Link from "next/link";
 function Signup() {
     const emailRef = useRef(null)
     const passwordRef = useRef(null)
+    const passwordCheckRef = useRef(null);
 
     const handleSubmit = async () => {
         console.log('signup')
