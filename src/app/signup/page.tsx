@@ -4,6 +4,7 @@ import { signIn } from 'next-auth/react'
 import {redirect} from "next/navigation";
 import {setToken} from "@/utils/localStorage/token";
 import Link from "next/link";
+import BackToHome from "@/Component/BackToHome";
 
 function Signup() {
     const emailRef = useRef(null)
@@ -53,6 +54,7 @@ function Signup() {
                             Sign Up
                         </button>
                     </div>
+                    <BackToHome/>
                 </div>
             </div>
         </main>

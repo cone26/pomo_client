@@ -119,3 +119,9 @@ button {
     margin-bottom: 35px;
     font-family: 'DM Serif Display', serif;
 }
+
+
+.home {
+    margin-top: 3px;
+    opacity: 0.6;
+}
