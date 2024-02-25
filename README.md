@@ -21,6 +21,9 @@
 
 
 ## 🎬 Preiview
+<img width="686" alt="Screenshot 2024-02-25 at 10 33 47 PM" src="https://github.com/cone26/pomo_client/assets/72402014/feca3cf8-248e-423c-acbb-ec55fe6c21dd">
+
+
 
 [//]: # (  <br />)
 
