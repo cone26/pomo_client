@@ -1,6 +1,6 @@
-# ⏰ POMODORO
+# ⏰ Let Us Focus
 
-> ### Let's Focus ! 🔥
+> ### This is Pomodoro timer to help you focus your tasks! 🔥
 >
 > https://main--subtle-tulumba-61347f.netlify.app
 
