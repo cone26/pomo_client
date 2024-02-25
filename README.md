@@ -1,9 +1,8 @@
-# ⏰ Let Us Focus
+# ⏰ Let Us Focus (On Going Project)
 
-> ### This is Pomodoro timer to help you focus your tasks! 🔥
+> ### This is Pomodoro timer to help you to focus your tasks! 🔥
 >
-> https://main--subtle-tulumba-61347f.netlify.app
-
+> https://letusfocus.netlify.app/
 <br />
 
 [//]: # (## 🔨 기술 스택 &#40;Tech stack&#41;)
@@ -44,9 +43,9 @@
 ## 📝 Feature
 
 ### _v.1.0.0_
-- Pomodoro Timer
-- Login (Social Login)
-- Save Pomodoro Round
+- [x] Pomodoro Timer
+- [ ] Login (Social Login) 
+- [x] Save Pomodoro Round
 
 <br />
 
