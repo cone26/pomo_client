@@ -8,8 +8,8 @@ import GoogleProvider from "next-auth/providers/google";
 const handler = NextAuth({
     providers: [
         GoogleProvider({
-            clientId: CONFIG.GCP_ID,
-            clientSecret: CONFIG.GCP_PW,
+            clientId: CONFIG.GCP_ID || "",
+            clientSecret: CONFIG.GCP_PW || "",
         }),
         // CredentialProvider({
         //     name: 'Credentials',
