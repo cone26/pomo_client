@@ -49,6 +49,10 @@
 
 <br />
 
+### Issues
+- [ ] Timer is not working when It's on the background.
+
+
 
 
 <br />
