@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/gtag.js": "^0.0.19",
     "jsonwebtoken": "^9.0.2",
     "next": "14.1.0",
     "next-auth": "^4.24.5",

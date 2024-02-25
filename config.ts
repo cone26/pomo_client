@@ -10,4 +10,7 @@ export const CONFIG = {
     API_BASE_URL: process.env.NEXTPUBLIC_API_BASE_URL,
     AUTH_TOKEN_KEY: process.env.NEXT_PUBLIC_AUTH_TOKEN_KEY,
     SERVER: process.env.NEXT_PUBLIC_SERVER_API_URL,
+    GCP_ID: process.env.GOOGLD_CLIENT_ID,
+    GCP_PW: process.env.GOOGLE_CLIENT_SECRET
+
 }
