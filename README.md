@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ⏰ POMODORO
 
-## Getting Started
+> ### Let's Focus ! 🔥
+>
+> https://main--subtle-tulumba-61347f.netlify.app
 
-First, run the development server:
+<br />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[//]: # (## 🔨 기술 스택 &#40;Tech stack&#41;)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[//]: # ()
+[//]: # (<br />)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[//]: # ()
+[//]: # (<p align="center">)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+[//]: # (  <img src="https://user-images.githubusercontent.com/84328632/176751654-7ca0331f-efdb-4884-b328-a36a6ce60c9a.png" alt="tech-stack" width="60%">)
 
-## Learn More
+[//]: # (</p>)
 
-To learn more about Next.js, take a look at the following resources:
+<br />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🎬 Preiview
 
-## Deploy on Vercel
+[//]: # (  <br />)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[//]: # (  <p align="center">)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[//]: # (   <img src="https://user-images.githubusercontent.com/73643088/176643317-379e816c-4cf9-4ed2-a064-7670c0712255.gif" alt="home-responsive" width="50%">)
+
+[//]: # (  </p>)
+
+[//]: # (  <br />)
+
+[//]: # (  <p align="center">)
+
+[//]: # (    <img src="https://user-images.githubusercontent.com/73643088/176643292-3f424dee-37c6-436e-961f-2e8834abdcfd.gif" width="50%" alt="choose-product">)
+
+[//]: # (  </p>)
+
+<br />
+
+## 📝 Feature
+
+### _v.1.0.0_
+- Pomodoro Timer
+- Login (Social Login)
+- Save Pomodoro Round
+
+<br />
+
+
+
+<br />
