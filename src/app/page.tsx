@@ -24,11 +24,11 @@ export default function Home() {
     const [isBreak, setIsBreak] = useState(false);
     const [message, setMessage] = useState("");
     const [sound, setSound] = useState<HTMLAudioElement>();
+
     // refs
     const timeCount = useRef(time);
     const breakCount = useRef(breakTime)
     let count = isBreak ? breakCount : timeCount;
-    const interval = useRef<ReturnType<typeof setInterval> | null>(null)
     let requestId:number;
 
     useEffect(()=>{
@@ -50,11 +50,6 @@ export default function Home() {
         }
         if(!status) {
             requestId = requestAnimationFrame(()=>callback(new Date().getTime()))
-            // interval.current = setInterval(()=>{
-            //     count.current -= 1;
-            //     minuteCalculator();
-            // },1000);
-            // @ts-ignore
             return () => cancelAnimationFrame(requestId);
         }
 
