@@ -36,7 +36,7 @@ export default function Home() {
     useEffect(()=>{
         document.addEventListener('visibilitychange',(e) => {
             e.stopImmediatePropagation();
-        })
+        }, true)
         setSound(new Audio(dingSound))
     },[])
     useEffect(()=>{
