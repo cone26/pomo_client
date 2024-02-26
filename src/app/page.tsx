@@ -34,9 +34,6 @@ export default function Home() {
         if(session && session.user) void getRound(session)
     })
     useEffect(()=>{
-        document.addEventListener('visibilitychange',(e) => {
-            e.stopImmediatePropagation();
-        }, true)
         setSound(new Audio(dingSound))
     },[])
     useEffect(()=>{
@@ -122,7 +119,20 @@ export default function Home() {
         // setRound((round)=>round+1)
     }
 
+    function handleVisibilityChange() {
+        if(document.hidden) {
+            // the page is hidden
+            Object.defineProperty(document, 'hidden', {value: false,writable: false});
+            Object.defineProperty(document, 'visibilityState', {value: 'visible',writable: false});
+            Object.defineProperty(document, 'webkitVisibilityState', {value: 'visible',writable: false});
+            document.dispatchEvent(new Event('visibilitychange'));
+            document.hasFocus = function () {
+                return true;
+            };
+        }
+    }
 
+    document.addEventListener("visibilitychange", handleVisibilityChange, false);
 
     return (
         <div className={'container'}>
