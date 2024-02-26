@@ -120,7 +120,7 @@ export default function Home() {
     }
 
     function handleVisibilityChange() {
-        if(document.hidden) {
+        if(document.visibilityState !== "visible") {
             // the page is hidden
             Object.defineProperty(document, 'hidden', {value: false,writable: false});
             Object.defineProperty(document, 'visibilityState', {value: 'visible',writable: false});
