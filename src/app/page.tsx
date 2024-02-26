@@ -3,7 +3,6 @@ import FilterStatus from "@/Component/FilterStatus";
 import { useEffect, useRef, useState} from "react";
 import SignInButton from "@/Component/SignInButton";
 import {useSession} from "next-auth/react";
-import {getToken} from "@/utils/localStorage/token";
 import {CONFIG} from "../../config";
 import dingSound from '../../public/ding.wav'
 
