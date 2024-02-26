@@ -29,6 +29,7 @@ export default function Home() {
     const breakCount = useRef(breakTime)
     let count = isBreak ? breakCount : timeCount;
     const interval = useRef<ReturnType<typeof setInterval> | null>(null)
+    let requestId:number;
 
     useEffect(()=>{
         if(session && session.user) void getRound(session)
@@ -37,13 +38,24 @@ export default function Home() {
         setSound(new Audio(dingSound))
     },[])
     useEffect(()=>{
-        if(!status) {
-            interval.current = setInterval(()=>{
+        const callback = function (lastTime: number) {
+            const currentTime = new Date().getTime();
+            let diff = currentTime - lastTime;
+            if (diff > 1000) {
                 count.current -= 1;
                 minuteCalculator();
-            },1000);
+                lastTime = currentTime;
+            }
+            requestId = requestAnimationFrame(()=>callback(lastTime))
+        }
+        if(!status) {
+            requestId = requestAnimationFrame(()=>callback(new Date().getTime()))
+            // interval.current = setInterval(()=>{
+            //     count.current -= 1;
+            //     minuteCalculator();
+            // },1000);
             // @ts-ignore
-            return () => clearInterval(interval.current);
+            return () => cancelAnimationFrame(requestId);
         }
 
     },[status])
@@ -56,8 +68,7 @@ export default function Home() {
             sound && sound.play();
             setStatus(!status)
             setIsBreak(!isBreak)
-            // @ts-ignore
-            clearInterval(interval.current);
+            cancelAnimationFrame(requestId);
             if(isBreak) {
                 setRound(round + 1)
                 if(session && session.user) void updateRound(session)
