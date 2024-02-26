@@ -120,24 +120,25 @@ export default function Home() {
     }
 
     document.addEventListener('visibilitychange',(e) => {
-        if(document.hidden) {
-            Object.defineProperty(document, 'hidden', {
-                value: false,
-                writable: false,
-            })
-            Object.defineProperty(document, 'visibilityState', {
-                value: 'visible',
-                writable: false,
-            })
-            Object.defineProperty(document, 'webkitVisibilityState', {
-                value: 'visible',
-                writable: false,
-            })
-            document.dispatchEvent(new Event('visibilitychange'));
-            document.hasFocus = function () {
-                return true;
-            }
-        }
+        // if(document.hidden) {
+        //     Object.defineProperty(document, 'hidden', {
+        //         value: false,
+        //         writable: false,
+        //     })
+        //     Object.defineProperty(document, 'visibilityState', {
+        //         value: 'visible',
+        //         writable: false,
+        //     })
+        //     Object.defineProperty(document, 'webkitVisibilityState', {
+        //         value: 'visible',
+        //         writable: false,
+        //     })
+        //     document.dispatchEvent(new Event('visibilitychange'));
+        //     document.hasFocus = function () {
+        //         return true;
+        //     }
+        // }
+        e.stopImmediatePropagation();
     })
 
     return (
