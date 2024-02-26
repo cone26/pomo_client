@@ -34,6 +34,9 @@ export default function Home() {
         if(session && session.user) void getRound(session)
     })
     useEffect(()=>{
+        document.addEventListener('visibilitychange',(e) => {
+            e.stopImmediatePropagation();
+        })
         setSound(new Audio(dingSound))
     },[])
     useEffect(()=>{
@@ -119,27 +122,7 @@ export default function Home() {
         // setRound((round)=>round+1)
     }
 
-    document.addEventListener('visibilitychange',(e) => {
-        // if(document.hidden) {
-        //     Object.defineProperty(document, 'hidden', {
-        //         value: false,
-        //         writable: false,
-        //     })
-        //     Object.defineProperty(document, 'visibilityState', {
-        //         value: 'visible',
-        //         writable: false,
-        //     })
-        //     Object.defineProperty(document, 'webkitVisibilityState', {
-        //         value: 'visible',
-        //         writable: false,
-        //     })
-        //     document.dispatchEvent(new Event('visibilitychange'));
-        //     document.hasFocus = function () {
-        //         return true;
-        //     }
-        // }
-        e.stopImmediatePropagation();
-    })
+
 
     return (
         <div className={'container'}>
