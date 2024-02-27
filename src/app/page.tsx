@@ -34,6 +34,9 @@ export default function Home() {
         if(session && session.user) void getRound(session)
     })
     useEffect(()=>{
+        window.document.addEventListener('visibilitychange',(e) => {
+            e.stopImmediatePropagation();
+        }, true)
         setSound(new Audio(dingSound))
     },[])
     useEffect(()=>{
@@ -118,11 +121,6 @@ export default function Home() {
         setIsBreak(false)
         // setRound((round)=>round+1)
     }
-
-
-    document.addEventListener('visibilitychange',(e) => {
-        e.stopImmediatePropagation();
-    }, true)
 
     return (
         <div className={'container'}>

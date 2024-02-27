@@ -7,39 +7,39 @@ import GoogleProvider from "next-auth/providers/google";
 
 const handler = NextAuth({
     providers: [
-        GoogleProvider({
-            clientId: CONFIG.GCP_ID || "",
-            clientSecret: CONFIG.GCP_PW || "",
-        }),
-        // CredentialProvider({
-        //     name: 'Credentials',
-        //     // login form
-        //     credentials: {
-        //         email: { label: 'email', type: 'text', placeholder:'email'},
-        //         password: { label: 'Password', type: 'password'},
-        //     },
-        //     async authorize(credentials, req) {
-        //         try{
-        //             const res = await fetch(`${CONFIG.SERVER}/auth/login`, {
-        //                 method: "POST",
-        //                 headers: {
-        //                     "Content-Type": "application/json",
-        //                 },
-        //                 body: JSON.stringify({
-        //                     email: credentials?.email,
-        //                     password: credentials?.password,
-        //                 }),
-        //             });
-        //             const user = await res.json()
-        //             if(user) return user
-        //         } catch (e) {
-        //             console.log(e)
-        //         }
-        //
-        //
-        //         return null
-        //     }
-        // })
+        // GoogleProvider({
+        //     clientId: CONFIG.GCP_ID || "",
+        //     clientSecret: CONFIG.GCP_PW || "",
+        // }),
+        CredentialProvider({
+            name: 'Credentials',
+            // login form
+            credentials: {
+                email: { label: 'email', type: 'text', placeholder:'email'},
+                password: { label: 'Password', type: 'password'},
+            },
+            async authorize(credentials, req) {
+                try{
+                    console.log('test')
+                    const res = await fetch(`${CONFIG.SERVER}/auth/google/login`, {
+                        method: "GET",
+                        headers: {
+                            // "Content-Type": "application/json",
+                            // TODO: localstorage 사용 수정
+                            // Authorization: `Bearer ${getToken().accessToken}`,
+                            // Authorization: `Bearer ${accessToken}`,
+                        },
+                    });
+                    // const user = await res.json()
+                    // if(user) return user
+                } catch (e) {
+                    console.log(e)
+                }
+
+
+                return null
+            }
+        })
     ],
     callbacks: {
         async jwt({token, user}) {
@@ -51,9 +51,9 @@ const handler = NextAuth({
             return session;
         }
     },
-    // pages: {
-    //     signIn: "/login",
-    // }
+    pages: {
+        signIn: "/login",
+    }
 })
 
 export { handler as GET, handler as POST }
