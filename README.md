@@ -1,6 +1,6 @@
 # ⏰ Let Me Focus (On Going Project)
 
-> ### This is Pomodoro timer to help you to focus your tasks! 🔥
+> ### This is a Pomodoro timer to help you to focus your tasks! 🔥
 >
 > https://letusfocus.netlify.app/
 <br />
