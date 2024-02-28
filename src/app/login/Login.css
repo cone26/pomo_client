@@ -9,7 +9,7 @@
 }
 h1 {
     margin-top: -50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     color: #4F6F52;
 }
 .loginContainer input {
@@ -23,9 +23,12 @@ h1 {
 }
 
 .loginButton button {
-    padding: 9px 83px;
-    margin-top: 10px;
-    font-size: 20px;
+    padding: 12px 26px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .loginInput {
@@ -48,4 +51,10 @@ a {
 .signup {
     margin-top: 10px;
     opacity: 0.6;
+}
+
+.googleLogo {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
 }

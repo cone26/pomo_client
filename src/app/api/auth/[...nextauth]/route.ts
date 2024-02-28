@@ -20,16 +20,16 @@ const handler = NextAuth({
             },
             async authorize(credentials, req) {
                 try{
-                    console.log('test')
-                    const res = await fetch(`${CONFIG.SERVER}/auth/google/login`, {
-                        method: "GET",
-                        headers: {
-                            // "Content-Type": "application/json",
-                            // TODO: localstorage 사용 수정
-                            // Authorization: `Bearer ${getToken().accessToken}`,
-                            // Authorization: `Bearer ${accessToken}`,
-                        },
-                    });
+                    // console.log('test')
+                    // const res = await fetch(`http://localhost:3002/auth/google/login`, {
+                    //     method: "GET",
+                    //     headers: {
+                    //         // "Content-Type": "application/json",
+                    //         // TODO: localstorage 사용 수정
+                    //         // Authorization: `Bearer ${getToken().accessToken}`,
+                    //         // Authorization: `Bearer ${accessToken}`,
+                    //     },
+                    // });
                     // const user = await res.json()
                     // if(user) return user
                 } catch (e) {

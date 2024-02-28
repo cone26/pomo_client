@@ -5,6 +5,7 @@ import {redirect} from "next/navigation";
 import {setToken} from "@/utils/localStorage/token";
 import Link from "next/link";
 import BackToHome from "@/Component/BackToHome";
+import googleLogo from '../../public/google.png'
 
 function Login() {
     const emailRef = useRef(null)
@@ -50,7 +51,8 @@ function Login() {
                     <button
                         onClick={handleSubmit}
                     >
-                        Log In
+                        Login by Google
+                        <img className={'googleLogo'} src={'/google.png'}/>
                     </button>
                 </div>
                     {/*<div className={'signup'}>*/}
