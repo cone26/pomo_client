@@ -30,13 +30,19 @@ export default function Home() {
     let count = isBreak ? breakCount : timeCount;
     let requestId:number;
 
+
+
     useEffect(()=>{
         if(session && session.user) void getRound(session)
+        // window.document.addEventListener('visibilitychange',(e) => {
+        //     e.preventDefault()
+        // });
+        if(document.hidden) {
+            !document.hidden
+        }
     })
     useEffect(()=>{
-        window.document.addEventListener('visibilitychange',(e) => {
-            e.stopImmediatePropagation();
-        }, true)
+
         setSound(new Audio(dingSound))
     },[])
     useEffect(()=>{
@@ -146,3 +152,5 @@ export default function Home() {
         </div>
     );
 }
+
+// webrtc 위에서 돌아가게하면 visible 안바뀜 -> nextjs에서 socket을 연결하는게 좀 빡셀듯..
