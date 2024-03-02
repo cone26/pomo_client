@@ -47,7 +47,7 @@
 
 ### _v.1.0.0_
 - [x] Pomodoro Timer
-- [ ] Login (Social Login) 
+- [x] Login (Social Login) 
 - [x] Save Pomodoro Round
 
 <br />
