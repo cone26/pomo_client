@@ -29,9 +29,9 @@ const handler = NextAuth({
                             // Authorization: `Bearer ${accessToken}`,
                         },
                     });
-                    const user = await res.json()
-                    console.log(user)
-                    if(user) return user
+                    // const user = await res.json()
+                    console.log(res)
+                    // if(user) return user
                 } catch (e) {
                     console.log(e)
                 }
