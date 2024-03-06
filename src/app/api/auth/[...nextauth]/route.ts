@@ -30,7 +30,6 @@ const handler = NextAuth({
                         },
                     });
                     // const user = await res.json()
-                    console.log(res)
                     // if(user) return user
                 } catch (e) {
                     console.log(e)
