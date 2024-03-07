@@ -130,7 +130,6 @@ export default function Home() {
 
     return (
         <div className={'container'}>
-            {/*<div className={'sideMenu'}>side</div>*/}
             <h1 className={'message'}>{message}</h1>
             <div className={'timer'}>
                 <div className={'clock'}>
@@ -143,11 +142,6 @@ export default function Home() {
                     <FilterStatus status={status} switchStatus={switchStatus} clearTime={clearTime} />
                 </div>
             </div>
-
-            {/*<div className={'round'}>*/}
-            {/*    <span className={'successDot'}></span>*/}
-            {/*</div>*/}
-            {/*<div className={'content'}>menu screen or todo</div>*/}
             <SignInButton/>
         </div>
     );
