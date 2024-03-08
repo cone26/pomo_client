@@ -34,12 +34,6 @@ export default function Home() {
 
     useEffect(()=>{
         if(session && session.user) void getRound(session)
-        // window.document.addEventListener('visibilitychange',(e) => {
-        //     e.preventDefault()
-        // });
-        if(document.hidden) {
-            !document.hidden
-        }
     })
     useEffect(()=>{
 
