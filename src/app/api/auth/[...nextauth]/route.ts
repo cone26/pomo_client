@@ -1,9 +1,6 @@
 import NextAuth from "next-auth/next";
 import CredentialProvider from 'next-auth/providers/credentials'
 import {CONFIG} from "../../../../../config";
-import {setToken} from "@/utils/localStorage/token";
-import {useSession} from "next-auth/react";
-import GoogleProvider from "next-auth/providers/google";
 
 const handler = NextAuth({
     providers: [
